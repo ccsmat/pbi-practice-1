@@ -32,11 +32,12 @@ The result of this query.
 ![image](https://github.com/ccsmat/pbi-practice-1/assets/29472739/2beb2d08-effb-4a84-9689-174888121477)
 
 # How to achieve the same result in Power BI?
+
 Based on the SQL query, 5 tables are involved. Complex relationships are built between these tables in the current model so I decided to use power query for data transformation rather than using DAX.
 
 ![image](https://github.com/ccsmat/pbi-practice-1/assets/29472739/c886b76e-ab83-4d8b-bd33-bbe20d6f887d)
 
-In power query, we can use Person.Person table and HumanResources.Employee to create a GetCurrentEmployeeID table. This table will be uased as a dictionary.
+In Power Query, we can use the Person.Person table and HumanResources.Employee to create a GetCurrentEmployeeID table. This table will be used as a dictionary.
 
 ## GetCurrentEmployeeID table
 
@@ -44,7 +45,7 @@ In power query, we can use Person.Person table and HumanResources.Employee to cr
 
 ## GetSalesPersonID table
 
-To create this table, steps can be broken down to 3 actions.
+To create this table, follow the steps:
 
 1. Reference a Production.Product table and filter ProductNumber with BK-M68B-42.
 
@@ -54,7 +55,7 @@ To create this table, steps can be broken down to 3 actions.
 
 3. Second merge and expand: Merge SalesOrderHeader table using left outer and expand the SalesPersonID column to rows.
 
-4. filter out the nulls in the SalesPersonID
+4. Filter out the nulls in the SalesPersonID
 
 ![image](https://github.com/ccsmat/pbi-practice-1/assets/29472739/e0deef9b-b55f-40d9-8668-7aef50b0c40a)
 
